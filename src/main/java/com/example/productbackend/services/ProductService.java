@@ -16,15 +16,14 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    public List<Product> getProducts(){
+    public List<Product> getProducts() {
         return this.repository.findAll();
     }
 
-    public Product getProduct(long id){
+    public Product getProduct(long id) {
         return this.repository
-        .findById(id)
-        .orElseThrow(
-            () -> new EntityNotFoundException("Product not found")
-        );
+                .findById(id)
+                .orElseThrow(
+                        () -> new EntityNotFoundException("Product not found"));
     }
 }
